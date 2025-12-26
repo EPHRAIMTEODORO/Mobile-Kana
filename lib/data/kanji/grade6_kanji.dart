@@ -1,0 +1,147 @@
+import '../models/kanji_character.dart';
+import '../models/kanji_example.dart';
+import '../models/kanji_enums.dart';
+
+// Grade 6: 191 kanji (sample of 10 shown)
+const List<KanjiCharacter> grade6Kanji = [
+  KanjiCharacter(
+    character: '異',
+    meanings: ['different', 'unusual', 'strange'],
+    onyomi: ['イ'],
+    kunyomi: ['こと'],
+    examples: [
+      KanjiExample(word: '異常', reading: 'いじょう', meaning: 'abnormal'),
+      KanjiExample(word: '異なる', reading: 'ことなる', meaning: 'to differ'),
+      KanjiExample(word: '差異', reading: 'さい', meaning: 'difference'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 11,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '遺',
+    meanings: ['bequeath', 'leave behind', 'remain'],
+    onyomi: ['イ', 'ユイ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '遺産', reading: 'いさん', meaning: 'inheritance, legacy'),
+      KanjiExample(word: '遺跡', reading: 'いせき', meaning: 'remains, ruins'),
+      KanjiExample(word: '遺伝', reading: 'いでん', meaning: 'heredity'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 15,
+    jlptLevel: JlptLevel.n1,
+  ),
+  KanjiCharacter(
+    character: '域',
+    meanings: ['region', 'area', 'domain'],
+    onyomi: ['イキ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '地域', reading: 'ちいき', meaning: 'area, region'),
+      KanjiExample(word: '区域', reading: 'くいき', meaning: 'zone, district'),
+      KanjiExample(word: '領域', reading: 'りょういき', meaning: 'domain, territory'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 11,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '宇',
+    meanings: ['eaves', 'roof', 'house', 'universe'],
+    onyomi: ['ウ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '宇宙', reading: 'うちゅう', meaning: 'universe, cosmos'),
+      KanjiExample(word: '宇宙船', reading: 'うちゅうせん', meaning: 'spaceship'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 6,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '映',
+    meanings: ['reflect', 'reflection', 'project'],
+    onyomi: ['エイ'],
+    kunyomi: ['うつ.る', 'うつ.す', 'は.える'],
+    examples: [
+      KanjiExample(word: '映画', reading: 'えいが', meaning: 'movie'),
+      KanjiExample(word: '反映', reading: 'はんえい', meaning: 'reflection'),
+      KanjiExample(word: '映す', reading: 'うつす', meaning: 'to project, reflect'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 9,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '延',
+    meanings: ['prolong', 'extend', 'postpone'],
+    onyomi: ['エン'],
+    kunyomi: ['の.びる', 'の.べる'],
+    examples: [
+      KanjiExample(word: '延期', reading: 'えんき', meaning: 'postponement'),
+      KanjiExample(word: '延長', reading: 'えんちょう', meaning: 'extension'),
+      KanjiExample(word: '延びる', reading: 'のびる', meaning: 'to be extended'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '沿',
+    meanings: ['run alongside', 'follow along'],
+    onyomi: ['エン'],
+    kunyomi: ['そ.う'],
+    examples: [
+      KanjiExample(word: '沿う', reading: 'そう', meaning: 'to run along'),
+      KanjiExample(word: '沿岸', reading: 'えんがん', meaning: 'coast, shore'),
+      KanjiExample(word: '沿線', reading: 'えんせん', meaning: 'along the railway line'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n1,
+  ),
+  KanjiCharacter(
+    character: '我',
+    meanings: ['ego', 'I', 'self'],
+    onyomi: ['ガ'],
+    kunyomi: ['われ', 'わ'],
+    examples: [
+      KanjiExample(word: '我々', reading: 'われわれ', meaning: 'we'),
+      KanjiExample(word: '自我', reading: 'じが', meaning: 'self, ego'),
+      KanjiExample(word: '忘我', reading: 'ぼうが', meaning: 'self-forgetfulness'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 7,
+    jlptLevel: JlptLevel.n1,
+  ),
+  KanjiCharacter(
+    character: '灰',
+    meanings: ['ashes', 'gray', 'puckery'],
+    onyomi: ['カイ'],
+    kunyomi: ['はい'],
+    examples: [
+      KanjiExample(word: '灰', reading: 'はい', meaning: 'ashes'),
+      KanjiExample(word: '灰色', reading: 'はいいろ', meaning: 'gray'),
+      KanjiExample(word: '火山灰', reading: 'かざんばい', meaning: 'volcanic ash'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 6,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '拡',
+    meanings: ['expand', 'enlarge', 'extend'],
+    onyomi: ['カク'],
+    kunyomi: ['ひろ.がる', 'ひろ.げる'],
+    examples: [
+      KanjiExample(word: '拡大', reading: 'かくだい', meaning: 'expansion, enlargement'),
+      KanjiExample(word: '拡張', reading: 'かくちょう', meaning: 'expansion'),
+      KanjiExample(word: '拡がる', reading: 'ひろがる', meaning: 'to spread, expand'),
+    ],
+    grade: KanjiGrade.grade6,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n1,
+  ),
+  // Add remaining 181 kanji for production
+];

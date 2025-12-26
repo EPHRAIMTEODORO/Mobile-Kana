@@ -1,0 +1,148 @@
+import '../models/kanji_character.dart';
+import '../models/kanji_example.dart';
+import '../models/kanji_enums.dart';
+
+// Grade 5: 193 kanji (sample of 10 shown)
+const List<KanjiCharacter> grade5Kanji = [
+  KanjiCharacter(
+    character: '圧',
+    meanings: ['pressure', 'push', 'overwhelm'],
+    onyomi: ['アツ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '圧力', reading: 'あつりょく', meaning: 'pressure'),
+      KanjiExample(word: '血圧', reading: 'けつあつ', meaning: 'blood pressure'),
+      KanjiExample(word: '圧迫', reading: 'あっぱく', meaning: 'oppression'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 5,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '移',
+    meanings: ['shift', 'move', 'change'],
+    onyomi: ['イ'],
+    kunyomi: ['うつ.る', 'うつ.す'],
+    examples: [
+      KanjiExample(word: '移動', reading: 'いどう', meaning: 'movement, migration'),
+      KanjiExample(word: '移る', reading: 'うつる', meaning: 'to move, shift'),
+      KanjiExample(word: '移民', reading: 'いみん', meaning: 'immigration'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 11,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '因',
+    meanings: ['cause', 'reason'],
+    onyomi: ['イン'],
+    kunyomi: ['よ.る'],
+    examples: [
+      KanjiExample(word: '原因', reading: 'げんいん', meaning: 'cause, origin'),
+      KanjiExample(word: '原因', reading: 'げんいん', meaning: 'cause'),
+      KanjiExample(word: '要因', reading: 'よういん', meaning: 'main factor'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 6,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '永',
+    meanings: ['eternity', 'long', 'lengthy'],
+    onyomi: ['エイ'],
+    kunyomi: ['なが.い'],
+    examples: [
+      KanjiExample(word: '永遠', reading: 'えいえん', meaning: 'eternity'),
+      KanjiExample(word: '永久', reading: 'えいきゅう', meaning: 'permanence'),
+      KanjiExample(word: '永続', reading: 'えいぞく', meaning: 'perpetuity'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 5,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '営',
+    meanings: ['manage', 'operate', 'run'],
+    onyomi: ['エイ'],
+    kunyomi: ['いとな.む'],
+    examples: [
+      KanjiExample(word: '経営', reading: 'けいえい', meaning: 'management'),
+      KanjiExample(word: '営業', reading: 'えいぎょう', meaning: 'business'),
+      KanjiExample(word: '営む', reading: 'いとなむ', meaning: 'to run, manage'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 12,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '衛',
+    meanings: ['defense', 'protection'],
+    onyomi: ['エイ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '衛生', reading: 'えいせい', meaning: 'hygiene, sanitation'),
+      KanjiExample(word: '防衛', reading: 'ぼうえい', meaning: 'defense'),
+      KanjiExample(word: '衛星', reading: 'えいせい', meaning: 'satellite'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 16,
+    jlptLevel: JlptLevel.n1,
+  ),
+  KanjiCharacter(
+    character: '易',
+    meanings: ['easy', 'ready to', 'simple'],
+    onyomi: ['イ', 'エキ'],
+    kunyomi: ['やさ.しい'],
+    examples: [
+      KanjiExample(word: '容易', reading: 'ようい', meaning: 'easy'),
+      KanjiExample(word: '簡易', reading: 'かんい', meaning: 'simple'),
+      KanjiExample(word: '貿易', reading: 'ぼうえき', meaning: 'trade'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '益',
+    meanings: ['benefit', 'gain', 'profit'],
+    onyomi: ['エキ', 'ヤク'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '利益', reading: 'りえき', meaning: 'profit, benefit'),
+      KanjiExample(word: '有益', reading: 'ゆうえき', meaning: 'beneficial'),
+      KanjiExample(word: '益々', reading: 'ますます', meaning: 'more and more'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 10,
+    jlptLevel: JlptLevel.n1,
+  ),
+  KanjiCharacter(
+    character: '液',
+    meanings: ['fluid', 'liquid', 'juice'],
+    onyomi: ['エキ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '液体', reading: 'えきたい', meaning: 'liquid'),
+      KanjiExample(word: '血液', reading: 'けつえき', meaning: 'blood'),
+      KanjiExample(word: '溶液', reading: 'ようえき', meaning: 'solution'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 11,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '演',
+    meanings: ['perform', 'act', 'play'],
+    onyomi: ['エン'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '演奏', reading: 'えんそう', meaning: 'musical performance'),
+      KanjiExample(word: '公演', reading: 'こうえん', meaning: 'public performance'),
+      KanjiExample(word: '演劇', reading: 'えんげき', meaning: 'drama, play'),
+    ],
+    grade: KanjiGrade.grade5,
+    strokeCount: 14,
+    jlptLevel: JlptLevel.n2,
+  ),
+  // Add remaining 183 kanji for production
+];

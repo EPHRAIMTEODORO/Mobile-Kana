@@ -1,0 +1,148 @@
+import '../models/kanji_character.dart';
+import '../models/kanji_example.dart';
+import '../models/kanji_enums.dart';
+
+// Grade 4: 202 kanji (sample of 10 shown)
+const List<KanjiCharacter> grade4Kanji = [
+  KanjiCharacter(
+    character: '愛',
+    meanings: ['love', 'affection'],
+    onyomi: ['アイ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '愛', reading: 'あい', meaning: 'love'),
+      KanjiExample(word: '愛情', reading: 'あいじょう', meaning: 'affection'),
+      KanjiExample(word: '愛する', reading: 'あいする', meaning: 'to love'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 13,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '案',
+    meanings: ['plan', 'idea', 'proposal'],
+    onyomi: ['アン'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '案内', reading: 'あんない', meaning: 'guidance, information'),
+      KanjiExample(word: '提案', reading: 'ていあん', meaning: 'proposal'),
+      KanjiExample(word: '名案', reading: 'めいあん', meaning: 'good idea'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 10,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '以',
+    meanings: ['by means of', 'because', 'compared with'],
+    onyomi: ['イ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '以上', reading: 'いじょう', meaning: 'more than, above'),
+      KanjiExample(word: '以下', reading: 'いか', meaning: 'less than, below'),
+      KanjiExample(word: '以外', reading: 'いがい', meaning: 'except'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 5,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '衣',
+    meanings: ['garment', 'clothes'],
+    onyomi: ['イ', 'エ'],
+    kunyomi: ['ころも'],
+    examples: [
+      KanjiExample(word: '衣服', reading: 'いふく', meaning: 'clothing'),
+      KanjiExample(word: '衣類', reading: 'いるい', meaning: 'garments'),
+      KanjiExample(word: '雨衣', reading: 'あまい', meaning: 'raincoat'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 6,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '位',
+    meanings: ['rank', 'position'],
+    onyomi: ['イ'],
+    kunyomi: ['くらい'],
+    examples: [
+      KanjiExample(word: '位置', reading: 'いち', meaning: 'position, location'),
+      KanjiExample(word: '一位', reading: 'いちい', meaning: 'first place'),
+      KanjiExample(word: '単位', reading: 'たんい', meaning: 'unit'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 7,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '囲',
+    meanings: ['surround', 'encircle'],
+    onyomi: ['イ'],
+    kunyomi: ['かこ.む', 'かこ.う'],
+    examples: [
+      KanjiExample(word: '囲む', reading: 'かこむ', meaning: 'to surround'),
+      KanjiExample(word: '周囲', reading: 'しゅうい', meaning: 'surroundings'),
+      KanjiExample(word: '範囲', reading: 'はんい', meaning: 'range, scope'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 7,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '胃',
+    meanings: ['stomach'],
+    onyomi: ['イ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '胃', reading: 'い', meaning: 'stomach'),
+      KanjiExample(word: '胃腸', reading: 'いちょう', meaning: 'stomach and intestines'),
+      KanjiExample(word: '胃薬', reading: 'いぐすり', meaning: 'stomach medicine'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 9,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '印',
+    meanings: ['stamp', 'seal', 'mark'],
+    onyomi: ['イン'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '印刷', reading: 'いんさつ', meaning: 'printing'),
+      KanjiExample(word: '目印', reading: 'めじるし', meaning: 'mark, sign'),
+      KanjiExample(word: '印象', reading: 'いんしょう', meaning: 'impression'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 6,
+    jlptLevel: JlptLevel.n2,
+  ),
+  KanjiCharacter(
+    character: '英',
+    meanings: ['England', 'English', 'excellent'],
+    onyomi: ['エイ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '英語', reading: 'えいご', meaning: 'English language'),
+      KanjiExample(word: '英国', reading: 'えいこく', meaning: 'England, UK'),
+      KanjiExample(word: '英雄', reading: 'えいゆう', meaning: 'hero'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '栄',
+    meanings: ['flourish', 'prosperity', 'honor'],
+    onyomi: ['エイ'],
+    kunyomi: ['さか.える'],
+    examples: [
+      KanjiExample(word: '栄える', reading: 'さかえる', meaning: 'to prosper'),
+      KanjiExample(word: '栄光', reading: 'えいこう', meaning: 'glory'),
+      KanjiExample(word: '栄養', reading: 'えいよう', meaning: 'nutrition'),
+    ],
+    grade: KanjiGrade.grade4,
+    strokeCount: 9,
+    jlptLevel: JlptLevel.n2,
+  ),
+  // Add remaining 192 kanji for production
+];

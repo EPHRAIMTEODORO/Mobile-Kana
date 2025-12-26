@@ -1,0 +1,148 @@
+import '../models/kanji_character.dart';
+import '../models/kanji_example.dart';
+import '../models/kanji_enums.dart';
+
+// Grade 3: 200 kanji (sample of 10 shown, add remaining 190 for production)
+const List<KanjiCharacter> grade3Kanji = [
+  KanjiCharacter(
+    character: '悪',
+    meanings: ['bad', 'evil'],
+    onyomi: ['アク', 'オ'],
+    kunyomi: ['わる.い'],
+    examples: [
+      KanjiExample(word: '悪い', reading: 'わるい', meaning: 'bad'),
+      KanjiExample(word: '悪人', reading: 'あくにん', meaning: 'bad person'),
+      KanjiExample(word: '最悪', reading: 'さいあく', meaning: 'worst'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 11,
+    jlptLevel: JlptLevel.n4,
+  ),
+  KanjiCharacter(
+    character: '安',
+    meanings: ['peaceful', 'cheap', 'safe'],
+    onyomi: ['アン'],
+    kunyomi: ['やす.い'],
+    examples: [
+      KanjiExample(word: '安い', reading: 'やすい', meaning: 'cheap'),
+      KanjiExample(word: '安全', reading: 'あんぜん', meaning: 'safety'),
+      KanjiExample(word: '不安', reading: 'ふあん', meaning: 'anxiety'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 6,
+    jlptLevel: JlptLevel.n4,
+  ),
+  KanjiCharacter(
+    character: '暗',
+    meanings: ['dark', 'darkness'],
+    onyomi: ['アン'],
+    kunyomi: ['くら.い'],
+    examples: [
+      KanjiExample(word: '暗い', reading: 'くらい', meaning: 'dark'),
+      KanjiExample(word: '暗記', reading: 'あんき', meaning: 'memorization'),
+      KanjiExample(word: '明暗', reading: 'めいあん', meaning: 'light and dark'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 13,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '医',
+    meanings: ['doctor', 'medicine'],
+    onyomi: ['イ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '医者', reading: 'いしゃ', meaning: 'doctor'),
+      KanjiExample(word: '医学', reading: 'いがく', meaning: 'medical science'),
+      KanjiExample(word: '医院', reading: 'いいん', meaning: 'clinic'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 7,
+    jlptLevel: JlptLevel.n4,
+  ),
+  KanjiCharacter(
+    character: '委',
+    meanings: ['committee', 'entrust'],
+    onyomi: ['イ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '委員', reading: 'いいん', meaning: 'committee member'),
+      KanjiExample(word: '委員会', reading: 'いいんかい', meaning: 'committee'),
+      KanjiExample(word: '委託', reading: 'いたく', meaning: 'consignment'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '意',
+    meanings: ['idea', 'mind', 'meaning'],
+    onyomi: ['イ'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '意味', reading: 'いみ', meaning: 'meaning'),
+      KanjiExample(word: '意見', reading: 'いけん', meaning: 'opinion'),
+      KanjiExample(word: '注意', reading: 'ちゅうい', meaning: 'attention, caution'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 13,
+    jlptLevel: JlptLevel.n4,
+  ),
+  KanjiCharacter(
+    character: '育',
+    meanings: ['raise', 'bring up', 'educate'],
+    onyomi: ['イク'],
+    kunyomi: ['そだ.つ', 'そだ.てる'],
+    examples: [
+      KanjiExample(word: '教育', reading: 'きょういく', meaning: 'education'),
+      KanjiExample(word: '育つ', reading: 'そだつ', meaning: 'to grow up'),
+      KanjiExample(word: '体育', reading: 'たいいく', meaning: 'physical education'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 8,
+    jlptLevel: JlptLevel.n3,
+  ),
+  KanjiCharacter(
+    character: '員',
+    meanings: ['member', 'personnel'],
+    onyomi: ['イン'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '会員', reading: 'かいいん', meaning: 'member'),
+      KanjiExample(word: '店員', reading: 'てんいん', meaning: 'store clerk'),
+      KanjiExample(word: '社員', reading: 'しゃいん', meaning: 'company employee'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 10,
+    jlptLevel: JlptLevel.n4,
+  ),
+  KanjiCharacter(
+    character: '院',
+    meanings: ['institution', 'temple', 'mansion'],
+    onyomi: ['イン'],
+    kunyomi: [],
+    examples: [
+      KanjiExample(word: '病院', reading: 'びょういん', meaning: 'hospital'),
+      KanjiExample(word: '入院', reading: 'にゅういん', meaning: 'hospitalization'),
+      KanjiExample(word: '大学院', reading: 'だいがくいん', meaning: 'graduate school'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 10,
+    jlptLevel: JlptLevel.n4,
+  ),
+  KanjiCharacter(
+    character: '飲',
+    meanings: ['drink'],
+    onyomi: ['イン'],
+    kunyomi: ['の.む'],
+    examples: [
+      KanjiExample(word: '飲む', reading: 'のむ', meaning: 'to drink'),
+      KanjiExample(word: '飲食', reading: 'いんしょく', meaning: 'food and drink'),
+      KanjiExample(word: '飲料', reading: 'いんりょう', meaning: 'beverage'),
+    ],
+    grade: KanjiGrade.grade3,
+    strokeCount: 12,
+    jlptLevel: JlptLevel.n4,
+  ),
+  // Add remaining 190 kanji for production
+];
