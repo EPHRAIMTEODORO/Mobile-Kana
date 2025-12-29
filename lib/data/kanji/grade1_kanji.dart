@@ -1,6 +1,6 @@
-import '../models/kanji_character.dart';
-import '../models/kanji_example.dart';
-import '../models/kanji_enums.dart';
+import '../../models/kanji_character.dart';
+import '../../models/kanji_example.dart';
+import '../../models/kanji_enums.dart';
 
 // Grade 1: 80 kanji (first 20 shown as example, add remaining 60)
 const List<KanjiCharacter> grade1Kanji = [

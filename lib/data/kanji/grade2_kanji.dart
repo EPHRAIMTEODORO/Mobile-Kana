@@ -1,6 +1,6 @@
-import '../models/kanji_character.dart';
-import '../models/kanji_example.dart';
-import '../models/kanji_enums.dart';
+import '../../models/kanji_character.dart';
+import '../../models/kanji_example.dart';
+import '../../models/kanji_enums.dart';
 
 // Grade 2: 160 kanji (sample of 15 shown, add remaining 145 for production)
 const List<KanjiCharacter> grade2Kanji = [

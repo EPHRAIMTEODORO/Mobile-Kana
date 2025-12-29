@@ -1,4 +1,5 @@
 import '../models/kanji_character.dart';
+import '../models/kanji_enums.dart';
 
 class KanjiSearch {
   /// Search kanji by character, meaning, or reading

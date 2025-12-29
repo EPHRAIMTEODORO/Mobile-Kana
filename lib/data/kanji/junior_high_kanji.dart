@@ -1,6 +1,6 @@
-import '../models/kanji_character.dart';
-import '../models/kanji_example.dart';
-import '../models/kanji_enums.dart';
+import '../../models/kanji_character.dart';
+import '../../models/kanji_example.dart';
+import '../../models/kanji_enums.dart';
 
 // Junior High: 1,126 kanji (sample of 15 shown)
 // This represents the remaining Jōyō kanji learned in junior high school

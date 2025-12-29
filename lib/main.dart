@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         seedColor: AppColors.kanaGradientStart,
         brightness: Brightness.light,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: AppConstants.cardElevation,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppConstants.borderRadius),
@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
         seedColor: AppColors.kanaGradientStart,
         brightness: Brightness.dark,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: AppConstants.cardElevation,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppConstants.borderRadius),
