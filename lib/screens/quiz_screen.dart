@@ -3,10 +3,23 @@ import '../data/hiragana_data.dart';
 import '../data/katakana_data.dart';
 import '../data/all_data.dart';
 import '../models/quiz_question.dart';
+import '../models/kanji_enums.dart';
 import '../utils/quiz_generator.dart';
 import '../utils/storage_helper.dart';
 
-enum QuizMode { hiragana, katakana, mixed, kanji }
+enum QuizMode { 
+  hiragana, 
+  katakana, 
+  mixed, 
+  kanjiAll,
+  kanjiGrade1,
+  kanjiGrade2,
+  kanjiGrade3,
+  kanjiGrade4,
+  kanjiGrade5,
+  kanjiGrade6,
+  kanjiJuniorHigh
+}
 
 enum QuizState { setup, question, results }
 
@@ -58,9 +71,51 @@ class _QuizScreenState extends State<QuizScreen> {
           questionType: QuestionType.charToRomaji,
           questionCount: 10,
         );
-      case QuizMode.kanji:
+      case QuizMode.kanjiAll:
         return QuizGenerator.generateKanjiQuiz(
           characters: AllData.allKanji,
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiGrade1:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.grade1),
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiGrade2:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.grade2),
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiGrade3:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.grade3),
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiGrade4:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.grade4),
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiGrade5:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.grade5),
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiGrade6:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.grade6),
+          questionType: QuestionType.kanjiToMeaning,
+          questionCount: 10,
+        );
+      case QuizMode.kanjiJuniorHigh:
+        return QuizGenerator.generateKanjiQuiz(
+          characters: AllData.getKanjiByGrade(KanjiGrade.juniorHigh),
           questionType: QuestionType.kanjiToMeaning,
           questionCount: 10,
         );
@@ -85,7 +140,9 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     // Track progress for the character
-    if (_selectedMode != QuizMode.kanji) {
+    if (_selectedMode == QuizMode.hiragana || 
+        _selectedMode == QuizMode.katakana || 
+        _selectedMode == QuizMode.mixed) {
       await StorageHelper.updateCharacterProgress(
         currentQuestion.question,
         isCorrect,
@@ -155,11 +212,10 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget _buildSetupScreen() {
-    return Center(
+    return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               'Choose Your Quiz Mode',
@@ -169,15 +225,59 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 48),
+            const SizedBox(height: 32),
+            
+            // Kana Section
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Kana',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.purple,
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
             _buildModeButton('Hiragana Only', QuizMode.hiragana),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
             _buildModeButton('Katakana Only', QuizMode.katakana),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
             _buildModeButton('Mixed (Hiragana & Katakana)', QuizMode.mixed),
-            const SizedBox(height: 16),
-            _buildModeButton('Kanji (All Grades)', QuizMode.kanji),
-            const SizedBox(height: 48),
+            
+            const SizedBox(height: 32),
+            
+            // Kanji Section
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Kanji',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.purple,
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+            _buildModeButton('All Grades (2,140 kanji)', QuizMode.kanjiAll),
+            const SizedBox(height: 12),
+            _buildModeButton('Grade 1 (80 kanji)', QuizMode.kanjiGrade1),
+            const SizedBox(height: 12),
+            _buildModeButton('Grade 2 (160 kanji)', QuizMode.kanjiGrade2),
+            const SizedBox(height: 12),
+            _buildModeButton('Grade 3 (200 kanji)', QuizMode.kanjiGrade3),
+            const SizedBox(height: 12),
+            _buildModeButton('Grade 4 (200 kanji)', QuizMode.kanjiGrade4),
+            const SizedBox(height: 12),
+            _buildModeButton('Grade 5 (185 kanji)', QuizMode.kanjiGrade5),
+            const SizedBox(height: 12),
+            _buildModeButton('Grade 6 (181 kanji)', QuizMode.kanjiGrade6),
+            const SizedBox(height: 12),
+            _buildModeButton('Junior High (1,134 kanji)', QuizMode.kanjiJuniorHigh),
+            
+            const SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -313,7 +413,16 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   String _getQuestionText(QuizQuestion question) {
-    if (_selectedMode == QuizMode.kanji) {
+    final isKanjiMode = _selectedMode == QuizMode.kanjiAll ||
+        _selectedMode == QuizMode.kanjiGrade1 ||
+        _selectedMode == QuizMode.kanjiGrade2 ||
+        _selectedMode == QuizMode.kanjiGrade3 ||
+        _selectedMode == QuizMode.kanjiGrade4 ||
+        _selectedMode == QuizMode.kanjiGrade5 ||
+        _selectedMode == QuizMode.kanjiGrade6 ||
+        _selectedMode == QuizMode.kanjiJuniorHigh;
+    
+    if (isKanjiMode) {
       switch (question.questionType) {
         case QuestionType.kanjiToMeaning:
           return 'What is the meaning of this kanji?';
