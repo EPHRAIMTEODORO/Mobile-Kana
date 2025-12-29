@@ -112,8 +112,7 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
         ),
         child: Column(
           children: [
-            _buildGradeSelector(),
-            _buildCurrentSectionInfo(),
+            _buildCompactGradeSelector(),
             Expanded(child: _buildKanjiGrid()),
           ],
         ),
@@ -121,40 +120,27 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
     );
   }
 
-  Widget _buildGradeSelector() {
+  Widget _buildCompactGradeSelector() {
     return Container(
-      padding: const EdgeInsets.all(16),
+      height: 80,
+      padding: const EdgeInsets.symmetric(vertical: 8),
       color: Colors.white.withOpacity(0.9),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          int crossAxisCount = 2;
-          if (constraints.maxWidth > 1000) {
-            crossAxisCount = 7;
-          } else if (constraints.maxWidth > 600) {
-            crossAxisCount = 4;
-          }
-
-          return GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: crossAxisCount,
-              mainAxisSpacing: 8,
-              crossAxisSpacing: 8,
-              childAspectRatio: 2,
-            ),
-            itemCount: _grades.length,
-            itemBuilder: (context, index) {
-              final grade = _grades[index];
-              return _buildGradeButton(grade);
-            },
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        itemCount: _grades.length,
+        itemBuilder: (context, index) {
+          final grade = _grades[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: _buildCompactGradeButton(grade),
           );
         },
       ),
     );
   }
 
-  Widget _buildGradeButton(GradeInfo gradeInfo) {
+  Widget _buildCompactGradeButton(GradeInfo gradeInfo) {
     final isSelected = _selectedGrade == gradeInfo.grade;
     return InkWell(
       onTap: () => setState(() {
@@ -162,38 +148,33 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
         _selectedKanji = null;
       }),
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.purple.shade50 : Colors.white,
+          color: isSelected ? Colors.purple.shade500 : Colors.white,
           border: Border.all(
-            color: isSelected ? Colors.purple.shade500 : Colors.grey.shade300,
-            width: isSelected ? 2 : 1,
+            color: isSelected ? Colors.purple.shade700 : Colors.grey.shade300,
+            width: 2,
           ),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               gradeInfo.name,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              gradeInfo.nameJP,
               style: TextStyle(
                 fontSize: 12,
-                color: Colors.grey.shade600,
+                fontWeight: FontWeight.bold,
+                color: isSelected ? Colors.white : Colors.black87,
               ),
             ),
+            const SizedBox(height: 2),
             Text(
               '${gradeInfo.count}',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.purple.shade600,
+                color: isSelected ? Colors.white : Colors.purple.shade600,
               ),
             ),
           ],
@@ -202,62 +183,7 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
     );
   }
 
-  Widget _buildCurrentSectionInfo() {
-    final currentGrade = _grades.firstWhere((g) => g.grade == _selectedGrade);
-    final kanjiList = _currentKanjiList;
 
-    return Container(
-      margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            '${currentGrade.name} (${currentGrade.nameJP})',
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            _getGradeDescription(_selectedGrade),
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey.shade700,
-            ),
-          ),
-          const SizedBox(height: 12),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: Colors.purple.shade100,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Text(
-              'Available: ${kanjiList.length} kanji',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Colors.purple.shade800,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   String _getGradeDescription(KanjiGrade grade) {
     switch (grade) {
@@ -279,35 +205,73 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
   }
 
   Widget _buildKanjiGrid() {
+    final currentGrade = _grades.firstWhere((g) => g.grade == _selectedGrade);
     final kanjiList = _currentKanjiList;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        int crossAxisCount = 5;
-        if (constraints.maxWidth > 1000) {
-          crossAxisCount = 12;
-        } else if (constraints.maxWidth > 600) {
-          crossAxisCount = 8;
-        } else if (constraints.maxWidth > 400) {
-          crossAxisCount = 6;
-        }
-
-        return GridView.builder(
-          padding: const EdgeInsets.all(16),
-          physics: const AlwaysScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: crossAxisCount,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            childAspectRatio: 1,
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          color: Colors.white.withOpacity(0.95),
+          child: Row(
+            children: [
+              Text(
+                '${currentGrade.name} (${currentGrade.nameJP})',
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.purple.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  '${kanjiList.length} kanji',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.purple.shade800,
+                  ),
+                ),
+              ),
+            ],
           ),
-          itemCount: kanjiList.length,
-          itemBuilder: (context, index) {
-            final kanji = kanjiList[index];
-            return _buildKanjiCell(kanji);
-          },
-        );
-      },
+        ),
+        Expanded(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              int crossAxisCount = 5;
+              if (constraints.maxWidth > 1000) {
+                crossAxisCount = 12;
+              } else if (constraints.maxWidth > 600) {
+                crossAxisCount = 8;
+              } else if (constraints.maxWidth > 400) {
+                crossAxisCount = 6;
+              }
+
+              return GridView.builder(
+                padding: const EdgeInsets.all(16),
+                physics: const AlwaysScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                  childAspectRatio: 1,
+                ),
+                itemCount: kanjiList.length,
+                itemBuilder: (context, index) {
+                  final kanji = kanjiList[index];
+                  return _buildKanjiCell(kanji);
+                },
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
