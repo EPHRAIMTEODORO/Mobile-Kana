@@ -2,10 +2,10 @@ enum KanjiGrade {
   grade1, // 80 kanji
   grade2, // 160 kanji
   grade3, // 200 kanji
-  grade4, // 202 kanji
-  grade5, // 193 kanji
-  grade6, // 191 kanji
-  juniorHigh // 1,126 kanji
+  grade4, // 200 kanji
+  grade5, // 185 kanji
+  grade6, // 181 kanji
+  juniorHigh // 1,134 kanji
 }
 
 enum JlptLevel { n5, n4, n3, n2, n1 }
@@ -58,13 +58,13 @@ extension KanjiGradeExtension on KanjiGrade {
       case KanjiGrade.grade3:
         return 200;
       case KanjiGrade.grade4:
-        return 202;
+        return 200;
       case KanjiGrade.grade5:
-        return 193;
+        return 185;
       case KanjiGrade.grade6:
-        return 191;
+        return 181;
       case KanjiGrade.juniorHigh:
-        return 1126;
+        return 1134;
     }
   }
 }

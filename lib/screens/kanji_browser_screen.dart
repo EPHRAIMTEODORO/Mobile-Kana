@@ -51,25 +51,25 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
       grade: KanjiGrade.grade4,
       name: 'Grade 4',
       nameJP: '第四学年',
-      count: 202,
+      count: 200,
     ),
     GradeInfo(
       grade: KanjiGrade.grade5,
       name: 'Grade 5',
       nameJP: '第五学年',
-      count: 193,
+      count: 185,
     ),
     GradeInfo(
       grade: KanjiGrade.grade6,
       name: 'Grade 6',
       nameJP: '第六学年',
-      count: 191,
+      count: 181,
     ),
     GradeInfo(
       grade: KanjiGrade.juniorHigh,
       name: 'Junior High',
       nameJP: '中学校',
-      count: 1126,
+      count: 1134,
     ),
   ];
 
@@ -294,6 +294,7 @@ class _KanjiBrowserScreenState extends State<KanjiBrowserScreen> {
 
         return GridView.builder(
           padding: const EdgeInsets.all(16),
+          physics: const AlwaysScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: crossAxisCount,
             mainAxisSpacing: 8,
